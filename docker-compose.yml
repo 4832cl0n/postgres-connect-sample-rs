@@ -4,8 +4,15 @@ services:
   rs-service:
     build:
       context: ./
-      dockerfile: dockerfile
-  
+      dockerfile: Dockerfile
+    tty: true
+    volumes: 
+      - ./:/app
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: root
+      POSTGRES_URL: postgresql
+
   postgresql:
     image: postgres:10.5
     container_name: postgresql

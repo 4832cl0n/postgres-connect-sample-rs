@@ -4,6 +4,5 @@ ENV USER=4832cl0n
 WORKDIR /app
 COPY ./ /app
 RUN apt-get update; \
-    cargo clean; \
-    ls; \
-    cargo run
+    cargo clean
+CMD [ "cargo run" ]
